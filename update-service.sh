@@ -3,6 +3,7 @@ SERVICE_NAME="flask-signup-service"
 IMAGE_VERSION="v_"${BUILD_NUMBER}
 TASK_FAMILY="flask-signup"
 CLUSTER_NAME="test123"
+REGION="cn-north-1"
 
 
 # Create a new task definition for this build
@@ -16,4 +17,4 @@ if [ ${DESIRED_COUNT} = "0" ]; then
     DESIRED_COUNT="1"
 fi
 
-aws ecs update-service --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_FAMILY}:${TASK_REVISION} --desired-count ${DESIRED_COUNT}
+aws ecs update-service --region ${REGION} --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_FAMILY}:${TASK_REVISION} --desired-count ${DESIRED_COUNT}
