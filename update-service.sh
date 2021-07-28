@@ -16,5 +16,6 @@ DESIRED_COUNT=`aws ecs describe-services --services ${SERVICE_NAME} --cluster ${
 if [ ${DESIRED_COUNT} = "0" ]; then
     DESIRED_COUNT="1"
 fi
+sleep 2
 
 aws ecs update-service --region ${REGION} --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_FAMILY}:${TASK_REVISION} --desired-count ${DESIRED_COUNT}
