@@ -8,7 +8,7 @@
           "containerPort": 5000
         }
       ],
-      "image": "584465429020.dkr.ecr.cn-north-1.amazonaws.com.cn/flask-signup:v_%BUILD_NUMBER%",
+      "image": "584465429020.dkr.ecr.cn-north-1.amazonaws.com.cn/py-flask-signup-docker:v_%BUILD_NUMBER%",
       "essential": true,
       "name": "flask-signup"
     }
