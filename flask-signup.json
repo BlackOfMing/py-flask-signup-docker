@@ -1,0 +1,23 @@
+{
+  "containerDefinitions": [
+    {
+      "portMappings": [
+        {
+          "hostPort": 5000,
+          "protocol": "tcp",
+          "containerPort": 5000
+        }
+      ],
+      "image": "584465429020.dkr.ecr.cn-north-1.amazonaws.com.cn/flask-signup:v_%BUILD_NUMBER%",
+      "essential": true,
+      "name": "flask-signup"
+    }
+  ],
+  "memory": "256",
+  "family": "flask-signup",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "128"
+}
